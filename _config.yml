@@ -107,7 +107,7 @@ content:
           - Provisioning 자동화: 사용자 클러스터 원클릭 배포를 위한 YAML Manifest 및 Helm Chart 표준화
           - 통합 관제 UI 제공: OpenSearch Dashboards를 연동하여 사용자가 클러스터 리소스 및 애플리케이션 상태를 즉시 파악할 수 있는 맞춤형 가시성 환경 구축
 
-  - title: Skill # Title for the section
+  - title: Skills # Title for the section
     layout: list # Type of content section (list/text)
     content:
       - layout: left
@@ -132,7 +132,7 @@ content:
           - Jira, Confluence, Slack
 
 
-  - title: Certificate
+  - title: Certificates
     layout: text
     content: | # this will include new lines to allow paragraphs
       - 정보처리기사 / 한국산업인력공단 / 2021.06
