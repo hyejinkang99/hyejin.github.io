@@ -90,11 +90,19 @@ content:
         caption: 2023.03 ~ 2023.12, 2024.10 ~ 현재
         quote: >
           대규모 멀티 테넌시 환경에서 DB 엔진의 전체 생명주기를 자동화하는 DBaaS(Database as a Service) 오케스트레이션 플랫폼 개발
-        description: | # this will include new lines to allow paragraphs
+        description: |
           - DB 사용자/스키마 관리 API 설계: 멀티 테넌시 환경에서의 권한 격리 및 리소스 제어 API 구현
           - DB 로그 관리 시스템 구축: 대규모 인스턴스에서 발생하는 실시간 로그 수집 및 분석 파이프라인 설계
           - 운영 자동화 엔진 고도화: K8s Operator 패턴을 활용해 프로비저닝, 백업, 복구 등 수동 운영 업무의 90% 자동화
           - 성능 최적화: Redis 캐싱 및 쿼리 튜닝을 통해 대규모 인스턴스 상태 조회 API 성능 개선
+
+      - layout: left
+        sub_title: K8s 기반 Observability 상품(APM) 구축
+        caption: 2024.01~2024.09
+        quote: >
+          ??
+        description: |
+          ??
 
   - title: Skill # Title for the section
     layout: list # Type of content section (list/text)
