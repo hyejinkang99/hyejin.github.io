@@ -105,8 +105,8 @@ content:
           - End-to-End 데이터 파이프라인 설계: OpenTelemetry → Data Prepper → OpenSearch 아키텍처 구축
           - 데이터 스키마 최적화: 로그, 메트릭, Tracing 데이터의 통합 수집을 위한 인덱스 구조 설계
           - Provisioning 자동화: 사용자 클러스터 원클릭 배포를 위한 YAML Manifest 및 Helm Chart 표준화
-          - 가시성 제공: 사용자별 맞춤형 대시보드 구성을 통해 클러스터 및 애플리케이션 모니터링 환경 제공
-          
+          - 통합 관제 UI 제공: OpenSearch Dashboards를 연동하여 사용자가 클러스터 리소스 및 애플리케이션 상태를 즉시 파악할 수 있는 맞춤형 가시성 환경 구축
+
   - title: Skill # Title for the section
     layout: list # Type of content section (list/text)
     content:
