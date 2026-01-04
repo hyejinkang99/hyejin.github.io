@@ -97,23 +97,22 @@ content:
       - layout: left
         title: Backend
         description: |
-          - Java, Spring Boot, JPA, Querydsl, Gradle
+          - Java, Spring Boot
+          - JPA, Querydsl
           - Kafka, Redis
       - layout: left # 새로운 항목임을 나타내는 하이픈 추가
         title: Cloud Native & Infrastructure
         description: |
-          - Kubernetes, ArgoCD, Helm, Operator Pattern, Cloud Platform
+          - Kubernetes, ArgoCD, Helm, Operator Pattern
           - Linux (Ubuntu), Bash Shell Scripting
       - layout: left
         title: Database
         description: | 
-          - PostgreSQL, MySQL, MariaDB, Redis
+          - PostgreSQL, MySQL, MariaDB
       - layout: left
         title: DevOps & Tools
         description: |
-          - GitHub Actions (CI), Jenkins (CI), Git
-          - ArgoCD (GitOps/CD), Helm
-          - IntelliJ IDEA, Visual Studio Code (VS Code)
+          - Git, GitHub Actions & Jenkins(CI)
           - Jira, Confluence, Slack
 
 
