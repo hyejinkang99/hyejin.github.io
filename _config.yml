@@ -73,13 +73,13 @@ content:
         quote: >
           Cloud, IDC, Network를 통합 제공하는 DX 전문 기업
         description: | # this will include new lines to allow paragraphs
-            - 확장성 있는 멀티 DB 엔진 아키텍처 설계 및 개발: PostgreSQL, MySQL, MariaDB, Redis DB 통합 관리 체계 구축
+            - Cloud Infra Control Plane 설계 및 개발: 대규모 리소스 제어를 위한 MSA 기반 백엔드 아키텍처 수립
 
 
-            - 대규모 멀티 테넌시 운영 안정성 확보: 수백대의 DB 인스턴스 자동화 관리 및 가동률 99.9% 달성
+            - 인프라 운영 자동화 및 가용성 관리: 수백 대 규모의 인스턴스 라이프사이클 자동화로 운영 효율 90% 개선 및 가동률 99.9% 유지
 
 
-            - Java Spring 기반 MSA 구조 설계 및 서비스 개발: 인프라 제어를 위한 비동기 이벤트 기반 컨트롤 플레인 구현
+            - 플랫폼 상품화 및 생태계 확장: DBaaS 및 Observability 등 클라우드 부가 서비스 상품 설계 및 프로비저닝 로직 고도화
 
   - title: Key Projects # Title for the section
     layout: list # Type of content section (list/text)
