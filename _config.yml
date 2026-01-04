@@ -51,7 +51,7 @@ about_content: | # this will include new lines to allow paragraphs
 
 
   단순한 기능 구현을 넘어, 서비스의 근간이 되는 플랫폼과 오케스트레이션 시스템을 설계하고 고도화하는 과정에 깊은 관심을 가지고 있습니다. 
-  대규모 멀티 테넌시 환경에서 DBaaS 서비스를 개발하며, 300+개 이상의 인스턴스가 안정적으로 가동될 수 있도록 운영 자동화 체계를 구축해 왔습니다.
+  대규모 멀티 테넌시 환경에서 DBaaS 서비스를 개발하며, 수백대의 인스턴스가 안정적으로 가동될 수 있도록 운영 자동화 체계를 구축해 왔습니다.
 
 
   개인이 선호하는 기술보다는 <mark>서비스의 안정성과 팀의 운영 효율성</mark>에 기여하는 개발을 지향합니다.
@@ -73,23 +73,26 @@ content:
         quote: >
           Cloud, IDC, Network를 통합 제공하는 DX 전문 기업
         description: | # this will include new lines to allow paragraphs
-            - 확장성 있는 멀티 DB 엔진 아키텍처 설계 및 개발
+            - 확장성 있는 멀티 DB 엔진 아키텍처 설계 및 개발: PostgreSQL, MySQL, MariaDB, Redis DB 통합 관리 체계 구축
 
 
-            - 대규모 멀티 테넌시 운영 안정성 확보
+            - 대규모 멀티 테넌시 운영 안정성 확보: 수백대의 DB 인스턴스 자동화 관리 및 가동률 99.9% 달성
 
 
-            - Java Spring 기반 MSA 구조 설계 및 서비스 개발
+            - Java Spring 기반 MSA 구조 설계 및 서비스 개발: 인프라 제어를 위한 비동기 이벤트 기반 컨트롤 플레인 구현
 
-  - title: Projects # Title for the section
+  - title: Key Projects # Title for the section
     layout: list # Type of content section (list/text)
     content:
       - layout: top-middle
         title: DBaaS 서비스 개발 및 고도화
         quote: >
-          This is probably one of the greatest apps ever created, if you don't agree you're probably wrong.
+          대규모 멀티 테넌시 환경에서 DB 엔진의 전체 생명주기를 자동화하는 DBaaS(Database as a Service) 오케스트레이션 플랫폼 개발
         description: | # this will include new lines to allow paragraphs
-          I started this project as a way if learning <mark>React</mark> and it has since grown into a fully fledged app. I have learned many skills through this and been I'm very proud of having this in my portfolio. If you don't have a project as awesome as this I would advise you make one.
+          - DB 사용자/스키마 관리 API 설계: 멀티 테넌시 환경에서의 권한 격리 및 리소스 제어 API 구현
+          - DB 로그 관리 시스템 구축: 대규모 인스턴스에서 발생하는 실시간 로그 수집 및 분석 파이프라인 설계
+          - 운영 자동화 엔진 고도화: K8s Operator 패턴을 활용해 프로비저닝, 백업, 복구 등 수동 운영 업무의 90% 자동화
+          - 성능 최적화: Redis 캐싱 및 쿼리 튜닝을 통해 대규모 인스턴스 상태 조회 API 성능 개선
 
   - title: Skill # Title for the section
     layout: list # Type of content section (list/text)
