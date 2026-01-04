@@ -91,6 +91,35 @@ content:
         description: | # this will include new lines to allow paragraphs
           I started this project as a way if learning <mark>React</mark> and it has since grown into a fully fledged app. I have learned many skills through this and been I'm very proud of having this in my portfolio. If you don't have a project as awesome as this I would advise you make one.
 
+  - title: Skill # Title for the section
+    layout: list # Type of content section (list/text)
+    content:
+      - layout: left
+        title: Backend
+        description: |
+            - Java, Spring Boot, JPA, Querydsl, Gradle
+
+
+            - Kafka, Redis
+        title: Cloud Native & Infrastructure
+        description: |
+            - Kubernetes, ArgoCD, Helm, Operator Pattern, Cloud Platform
+
+            - Linux (Ubuntu), Bash Shell Scripting
+        title: Database
+        description: | 
+            - PostgreSQL, MySQL, MariaDB, Redis
+        title: DevOps & Tools
+        description: |
+            - GitHub Actions (CI), Jenkins (CI), Git
+
+            - ArgoCD (GitOps/CD), Helm
+
+            - IntelliJ IDEA, Visual Studio Code (VS Code)
+
+            - Jira, Confluence, Slack
+
+
   - title: Certificate
     layout: text
     content: | # this will include new lines to allow paragraphs
