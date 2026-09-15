@@ -52,6 +52,7 @@ about_content: | # this will include new lines to allow paragraphs
 
   kt cloud에서 멀티 테넌트 DBaaS 서비스의 리소스 제어 API와 프로비저닝 로직을 개발하고, 수백 대 규모의 DB 인스턴스 생명주기를 자동화하는 업무를 수행했습니다.
   DB 엔진별 동작을 분리한 <mark>확장 가능한 구조</mark>와 Kubernetes 기반 운영 환경을 다루며, <mark>서비스 안정성과 운영 효율</mark>을 개선해 왔습니다.
+  최근에는 신규 클라우드 플랫폼 전환에 대응해 <mark>Multi-AZ 기반 고가용성 아키텍처</mark>를 설계하고, AZ 단위 장애까지 고려한 복구 자동화를 구축했습니다.
 
 
   인프라의 복잡한 운영 절차를 백엔드 로직으로 구현하고, 반복 작업을 자동화하는 플랫폼 개발에 강점이 있습니다.
@@ -101,6 +102,28 @@ content:
           - Redis 캐싱을 적용해 반복 조회에 따른 데이터베이스 접근 감소
           - JPA·Querydsl 기반 조회 쿼리 최적화
 
+      - layout: left
+        title: Multi-Cloud 통합 & Multi-AZ 가용성 아키텍처 설계
+        caption: 2025 ~ 현재
+        quote: >
+          신규 클라우드 플랫폼 확장과 AZ 단위 장애까지 견디는 고가용성 DB 아키텍처 설계
+        description: |
+          **신규·기존 클라우드 플랫폼 통합 지원 구조 설계**
+
+          - Strategy 패턴 기반 다형성 구조로 신규·기존 두 플랫폼을 하나의 코드베이스에서 동시 지원
+          - 상위 로직과 플랫폼별 구현체를 분리해 신규 플랫폼 확장 시 기존 코드 영향 최소화
+
+          **Multi-AZ 기반 DB 클러스터 고가용성 설계**
+
+          - 2개 가용영역(AZ)에 DB 클러스터 노드를 균등 배치해 AZ 간 부하 분산 및 이중화 구성
+          - 라우터 이중화(액티브-액티브)와 단일 가상 IP 엔드포인트로 장애 시에도 끊김 없는 접속 경로 확보
+          - 물리 서버 단위 분산 배치를 함께 적용해 서버 장애와 AZ 장애 양쪽에 대비하는 2단계 가용성 구조 구축
+
+          **AZ 장애 자동 복구 체계 구축**
+
+          - AZ 전체 장애로 클러스터 쿼럼(정족수)이 상실되는 상황을 자동 탐지하고 긴급 복구를 수행하는 백그라운드 자동화 개발
+          - 복구 목표 시간(RTO) 1시간 이내 달성을 위한 탐지-판정-복구 파이프라인 설계
+
   - title: Other Experience # Title for the section
     layout: list # Type of content section (list/text)
     content:
@@ -123,11 +146,13 @@ content:
         title: Cloud & Infrastructure
         description: |
           - Kubernetes, Helm, ArgoCD
+          - Multi-AZ/HA 아키텍처 설계
           - Linux, Bash
       - layout: left
         title: Database
         description: |
           - PostgreSQL, MySQL, MariaDB
+          - MySQL InnoDB Cluster (Group Replication)
       - layout: left
         title: Development & Collaboration
         description: |
