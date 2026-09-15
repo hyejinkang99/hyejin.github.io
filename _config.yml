@@ -52,7 +52,7 @@ about_content: | # this will include new lines to allow paragraphs
 
   kt cloud에서 멀티 테넌트 DBaaS 서비스의 리소스 제어 API와 프로비저닝 로직을 개발하고, 수백 대 규모의 DB 인스턴스 생명주기를 자동화하는 업무를 수행했습니다.
   DB 엔진별 동작을 분리한 <mark>확장 가능한 구조</mark>와 Kubernetes 기반 운영 환경을 다루며, <mark>서비스 안정성과 운영 효율</mark>을 개선해 왔습니다.
-  최근에는 신규 클라우드 플랫폼 전환에 대응해 <mark>Multi-AZ 기반 고가용성 아키텍처</mark>를 설계하고, AZ 단위 장애까지 고려한 복구 자동화를 구축했습니다.
+  최근에는 신규 클라우드 플랫폼 전환에 대응해 Kafka·Redis 등 미들웨어의 <mark>Multi-AZ 기반 고가용성 아키텍처</mark> 설계에 참여하며, AZ 단위 장애 시나리오별 복구 절차 수립에 기여했습니다.
 
 
   인프라의 복잡한 운영 절차를 백엔드 로직으로 구현하고, 반복 작업을 자동화하는 플랫폼 개발에 강점이 있습니다.
@@ -78,25 +78,29 @@ content:
     layout: list # Type of content section (list/text)
     content:
       - layout: left
-        title: 신규 클라우드 플랫폼 통합 및 Multi-AZ 기반 DB 고가용성 설계
+        title: 신규 클라우드 플랫폼 전환에 따른 미들웨어 Multi-AZ 고가용성 설계 참여
         caption: 2025 ~ 현재
         quote: >
-          DBaaS의 신규 클라우드 플랫폼 지원 확대 및 AZ 장애에 대응하는 DB 클러스터 구성·복구 자동화 개발
+          가용영역(AZ) 2개·노드 3대(2:1 분산) 환경에서 Kafka·Redis의 존 장애 대응 복구 절차를 팀과 함께 설계
         description: |
-          **클라우드 플랫폼 통합 지원 구조 설계**
+          **문제 정의**
 
-          - Strategy 패턴을 적용해 기존·신규 클라우드 플랫폼을 하나의 코드베이스에서 지원
-          - 공통 비즈니스 로직과 플랫폼별 리소스 제어 구현을 분리해 플랫폼 확장 시 변경 범위 축소
+          - Kafka·Redis 모두 3개 노드를 2개 AZ에 2:1로 분산할 수밖에 없는 제약 존재
+          - 과반수(쿼럼) 기반 합의 구조 특성상, 2대가 배치된 AZ 전체 장애 시 남은 1대만으로는 자동 복구 불가능한 상황을 팀과 함께 식별
 
-          **Multi-AZ 기반 DB 클러스터 고가용성 설계**
+          **AZ 장애 시나리오별 복구 절차 설계 참여**
 
-          - DB 클러스터 노드를 2개 AZ에 분산 배치하고, 물리 서버 단위 분산 배치를 함께 적용해 장애 영향 범위 분리
-          - 라우터 액티브-액티브 구성과 단일 가상 IP 기반 엔드포인트를 적용해 접속 경로 이중화
+          - 1대 배치 AZ 장애: Kafka는 KRaft voter 과반 유지로, Redis는 Sentinel 과반 유지로 자동 복구되는 경로 확인 및 변경 동결(Change Freeze) 절차 수립에 참여
+          - 2대 배치 AZ 장애: 자동 복구가 불가능한 상황에서 Redis는 SENTINEL FAILOVER로 생존 노드를 Master로 수동 승격, Kafka는 생존 AZ에 신규 노드를 재구축해 쿼럼을 복원하는 단계별 절차를 팀원들과 함께 설계
+          - 장애 AZ의 예상 복구 시간(RTO) 기준으로 원본 노드 복귀 대기와 생존 AZ 재구축 중 대응 방식을 분기하는 기준 수립에 참여
 
-          **AZ 장애 대응 및 복구 자동화**
+          **데이터 정합성 리스크 검토**
 
-          - AZ 장애로 클러스터 정족수가 상실되는 상황을 탐지하고 복구를 수행하는 백그라운드 작업 개발
-          - RTO 1시간 이내를 목표로 장애 탐지·복구 조건 판정·복구 실행 파이프라인 설계
+          - Redis 비동기 복제 특성상 발생 가능한 최근 쓰기 유실 구간을 식별하고, 승격 후 재동기화 절차로 대응하는 방안 논의
+          - Kafka ISR·min.insync.replicas 조건을 명시해 쿼럼 복구 후에도 안전하게 쓰기가 재개되는 조건 정의
+          - 노드 순차 복구 원칙(한 대씩 상태 확인 후 재합류)을 수립해 split-brain 및 이중 장애 확산 방지 방안 마련
+
+          (현재 장애 주입 테스트를 통한 절차 검증 단계 준비 중)
 
       - layout: left
         title: DBaaS 서비스 개발 및 고도화
@@ -132,6 +136,12 @@ content:
         description: |
           - Kubernetes 기반 Managed OpenSearch 및 OpenTelemetry 연계 서비스 개발 참여
 
+      - layout: left
+        title: 신규 클라우드 플랫폼 통합 DBaaS 아키텍처 설계 참여
+        caption: 2025 ~ 현재
+        description: |
+          - 신규·기존 클라우드 플랫폼을 하나의 코드베이스로 지원하는 Strategy 패턴 기반 구조, MySQL DB 클러스터 Multi-AZ 배포 구조 설계에 팀 논의로 참여
+
   - title: Skills # Title for the section
     layout: list # Type of content section (list/text)
     content:
@@ -145,13 +155,12 @@ content:
         title: Cloud & Infrastructure
         description: |
           - Kubernetes, Helm, ArgoCD
-          - Multi-AZ/HA 아키텍처 설계
+          - Kafka·Redis Multi-AZ 고가용성 설계
           - Linux, Bash
       - layout: left
         title: Database
         description: |
           - PostgreSQL, MySQL, MariaDB
-          - MySQL InnoDB Cluster (Group Replication)
       - layout: left
         title: Development & Collaboration
         description: |
