@@ -47,17 +47,14 @@ additional_links:
 # about_title: About Me
 about_profile_image: images/profile.jpg
 about_content: | # this will include new lines to allow paragraphs
-  Java & Spring, cloud native 기술에 특화된 역량을 보유한 4년차 백엔드 엔지니어입니다.
+  Java·Spring 기반으로 클라우드 인프라 제어 및 운영 자동화 플랫폼을 개발해 온 백엔드 엔지니어입니다.
 
 
-  단순한 기능 구현을 넘어, 서비스의 근간이 되는 플랫폼과 오케스트레이션 시스템을 설계하고 고도화하는 과정에 깊은 관심을 가지고 있습니다. 
-  대규모 멀티 테넌시 환경에서 DBaaS 서비스를 개발하며, 수백대의 인스턴스가 안정적으로 가동될 수 있도록 운영 자동화 체계를 구축해 왔습니다.
+  kt cloud에서 멀티 테넌트 DBaaS 서비스의 리소스 제어 API와 프로비저닝 로직을 개발하고, 수백 대 규모의 DB 인스턴스 생명주기를 자동화하는 업무를 수행했습니다.
+  DB 엔진별 동작을 분리한 <mark>확장 가능한 구조</mark>와 Kubernetes 기반 운영 환경을 다루며, <mark>서비스 안정성과 운영 효율</mark>을 개선해 왔습니다.
 
 
-  익숙한 기술보다는 상황에 맞는 적합한 <mark>새로운 기술</mark>을 탐구하는 것을 즐기며 <mark>서비스의 안정성과 팀의 운영 효율성</mark>에 기여하는 개발을 지향합니다.
-
-
-  대규모 트래픽과 복잡한 네트워크 환경에서도 흔들리지 않는 견고한 백엔드 시스템을 만드는 엔지니어로 <mark>성장</mark>하고 싶습니다.
+  인프라의 복잡한 운영 절차를 백엔드 로직으로 구현하고, 반복 작업을 자동화하는 플랫폼 개발에 강점이 있습니다.
 
 content:
 
@@ -68,39 +65,50 @@ content:
         title: kt cloud
         link: https://cloud.kt.com
         # link_text: boringcompany.com
-        # sub_title: Senior Network System Administrator
-        caption: 2022.06 - 현재
-        quote: >
-          Cloud, IDC, Network를 통합 제공하는 DX 전문 기업
+        sub_title: 백엔드 엔지니어
+        caption: 2022.06 ~ 현재
         description: | # this will include new lines to allow paragraphs
-            - Cloud Infra Control Plane 설계 및 개발: 대규모 리소스 제어를 위한 MSA 기반 백엔드 아키텍처 수립
-            - 인프라 운영 자동화 및 가용성 관리: 수백 대 규모의 인스턴스 라이프사이클 자동화로 운영 효율 90% 개선 및 가동률 99.9% 유지
-            - 플랫폼 상품화 및 생태계 확장: DBaaS 및 Observability 등 클라우드 부가 서비스 상품 설계 및 프로비저닝 로직 고도화
+            - 클라우드 인프라 제어 백엔드 개발: MSA 기반 DBaaS 플랫폼에서 멀티 테넌트 리소스 제어 API 및 프로비저닝 로직 개발
+            - 인스턴스 운영 자동화: 수백 대 규모 DB 인스턴스의 생명주기 관리와 반복 운영 작업 자동화
+            - 운영 안정성 개선: Kubernetes 환경의 미들웨어 HA 구성 및 트러블슈팅
+            - 클라우드 서비스 개발: DBaaS 서비스 개발·고도화 및 Observability 서비스 개발 참여
 
-  - title: Key Projects # Title for the section
+  - title: Key Project # Title for the section
     layout: list # Type of content section (list/text)
     content:
       - layout: left
-        title: kt cloud
-        sub_title: DBaaS 서비스 개발 및 고도화 
-        caption: 2023.03 ~ 2023.12, 2024.10 ~ 현재
+        title: DBaaS 서비스 개발 및 고도화
+        caption: 2023.03 ~ 2023.12 / 2024.10 ~ 현재
         quote: >
-          대규모 멀티 테넌시 환경에서 DB 엔진의 전체 생명주기를 자동화하는 DBaaS(Database as a Service) 오케스트레이션 플랫폼 개발
+          멀티 테넌트 환경에서 DB 인스턴스의 생성과 운영에 필요한 절차를 자동화하는 Database as a Service 플랫폼 개발
         description: |
-          - 프로비저닝 API 설계 및 개발: 멀티 테넌시 환경에서의 리소스 제어 API 개발, Strategy 패턴 기반 DB 엔진별 인터페이스 설계로 확장성 확보
-          - 운영 환경 구축:  Kubernetes 환경에서의 미들웨어 고가용성(HA) 구성 및 트러블 슈팅으로 운영 환경 안정성 확보
-          - 성능 최적화: Redis 캐싱 및 JPA/Querydsl 쿼리 최적화로 조회 성능 개선
+          **멀티 테넌트 리소스 제어 API 개발**
 
+          - 테넌트별 DB 인스턴스 생성 및 운영 요청을 처리하는 백엔드 API 개발
+          - 클라우드 리소스 생성과 DB 설정을 연계하는 프로비저닝 로직 구현
+
+          **DB 엔진별 프로비저닝 구조 개선**
+
+          - Strategy 패턴을 적용해 DB 엔진별 인터페이스와 구현 로직 분리
+          - 엔진별 처리 차이를 공통 인터페이스로 추상화해 기능 확장 및 유지보수 지원
+
+          **Kubernetes 기반 운영 환경 안정화**
+
+          - 미들웨어 고가용성 구성 및 운영 중 발생한 문제의 원인 분석·설정 개선
+
+          **조회 성능 개선**
+
+          - Redis 캐싱을 적용해 반복 조회에 따른 데이터베이스 접근 감소
+          - JPA·Querydsl 기반 조회 쿼리 최적화
+
+  - title: Other Experience # Title for the section
+    layout: list # Type of content section (list/text)
+    content:
       - layout: left
-        sub_title: Observability 상품 설계 및 구현
-        caption: 2024.01~2024.09
-        quote: >
-          K8s 기반 Managed OpenSearch/OTel 통합 모니터링 솔루션 상품화
+        title: Observability 서비스 개발 참여
+        caption: 2024.01 ~ 2024.09
         description: |
-          - End-to-End 데이터 파이프라인 설계: OpenTelemetry → Data Prepper → OpenSearch 아키텍처 구축
-          - 데이터 스키마 최적화: 로그, 메트릭, Tracing 데이터의 통합 수집을 위한 인덱스 구조 설계
-          - Provisioning 자동화: 사용자 클러스터 원클릭 배포를 위한 YAML Manifest 및 Helm Chart 표준화
-          - 통합 관제 UI 제공: OpenSearch Dashboards를 연동하여 사용자가 클러스터 리소스 및 애플리케이션 상태를 즉시 파악할 수 있는 맞춤형 가시성 환경 구축
+          - Kubernetes 기반 Managed OpenSearch 및 OpenTelemetry 연계 서비스 개발 참여
 
   - title: Skills # Title for the section
     layout: list # Type of content section (list/text)
@@ -112,26 +120,26 @@ content:
           - JPA, Querydsl
           - Kafka, Redis
       - layout: left # 새로운 항목임을 나타내는 하이픈 추가
-        title: Cloud Native & Infrastructure
+        title: Cloud & Infrastructure
         description: |
-          - Kubernetes, ArgoCD, Helm, Operator Pattern
-          - Linux (Ubuntu), Bash Shell Scripting
+          - Kubernetes, Helm, ArgoCD
+          - Linux, Bash
       - layout: left
         title: Database
-        description: | 
+        description: |
           - PostgreSQL, MySQL, MariaDB
       - layout: left
-        title: DevOps & Tools
+        title: Development & Collaboration
         description: |
-          - Git, GitHub Actions & Jenkins(CI)
+          - Git, GitHub Actions, Jenkins
           - Jira, Confluence, Slack
 
 
   - title: Certificates
     layout: text
     content: | # this will include new lines to allow paragraphs
-      - 정보처리기사 / 한국산업인력공단 / 2021.06
-      - CKA / The Linux Foundation / 2024.11
+      - CKA · The Linux Foundation · 2024.11
+      - 정보처리기사 · 한국산업인력공단 · 2021.06
 
 # Footer
 footer_show_references: true
